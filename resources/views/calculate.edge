@@ -1,0 +1,116 @@
+@layout('master')
+@section('content')
+  <h1 class="title">Berechnung der Nutzfläche</h1>
+  <p class="content">In allen Kleingärten sind auf mindestens ein Drittel der Fläche Obst- und Gemüse anzubauen. Hier kannst du prüfen, ob du genug Anbaufläche hast.</p>
+  @if(calculation.result)
+  <article class="message is-link">
+    <div class="message-body">
+      Deine Nutzfläche beträgt <strong>{{calculation.result}}&nbsp;%</strong> der Gesamtfläche.
+    </div>
+  </article>
+  @endif
+  <form class="calculate-garden-form" action="/anbau" method="POST">
+  {{--  {{ csrfField() }}  --}}
+  <div class="columns">
+    <div class="column is-10">
+      <div class="columns">
+        <div class="column is-8">
+          <label class="label">Größe des Grundstücks in m²</label>
+          <input class="input" type="number" name="size" placeholder="350"
+          @if(calculation.size)
+          value="{{calculation.size}}"
+          @endif
+          >
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <label class="label">Beetfläche in m²</label>
+          <input class="input" type="number" name="vegetables" placeholder="33" required
+          @if(calculation.vegetables)
+          value="{{calculation.vegetables}}"
+          @endif
+          >
+        </div>
+
+        <div class="column">
+          <label class="label">Beetlänge von Blumenanlagen</label>
+          <input class="input" type="number" name="flowers" placeholder="3"
+          @if(calculation.flowers)
+          value="{{calculation.flowers}}"
+          @endif
+          >
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <label class="label">Hoch- oder Halbstamm</label>
+          <p class="help">Süßkirsche, Apfel</p>
+          <input class="input" type="number" name="halbstamm" placeholder="3"
+          @if(calculation.halbstamm)
+          value="{{calculation.halbstamm}}"
+          @endif
+          >
+        </div>
+        <div class="column">
+          <label class="label">Niederstamm</label>
+          <p class="help">Apfel, Pflaume, Birne, Mirabelle</p>
+          <input class="input" type="number" name="niederstamm" placeholder="3"
+          @if(calculation.niederstamm)
+          value="{{calculation.niederstamm}}"
+          @endif
+          >
+        </div>
+      </div>
+      <div class=columns>
+        <div class="column">
+          <label class="label">Buschbaum</label>
+          <p class="help">Sauerkirsche, Birne, Pfirsich</p>
+          <input class="input" type="number" name="buschbaum" placeholder="3"
+          @if(calculation.buschbaum)
+          value="{{calculation.buschbaum}}"
+          @endif
+          >
+        </div>
+        <div class="column">
+          <label class="label">Spindel</label>
+          <p class="help">Sauerkirsche, Birne, Apfel</p>
+          <input class="input" type="number" name="spindel" placeholder="3"
+          @if(calculation.spindel)
+          value="{{calculation.spindel}}"
+          @endif
+          >
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <label class="label">Beerensträucher</label>
+          <p class="help">Johannesbeere, Stachelbeere, veredelte Obstgewächse</p>
+          <input class="input" type="number" name="beeren" placeholder="3"
+          @if(calculation.beeren)
+          value="{{calculation.beeren}}"
+          @endif
+          >
+        </div>
+        <div class="column">
+          <label class="label">Beetlänge von Ranken oder Spalierobst</label>
+          <p class="help">Brombeere, Himbeere, Kiwi, Wein</p>
+          <input class="input" type="number" name="spalierobst" placeholder="3"
+          @if(calculation.spalierobst)
+          value="{{calculation.spalierobst}}"
+          @endif
+          >
+        </div>
+      </div>
+
+      <div class="is-right mt-5 buttons">
+        <a class="button" href="/">Abbrechen</a>
+        <button class="button is-primary" type="submit">Berechne</button>
+      </div>
+    </div>
+  </form>
+
+@endsection

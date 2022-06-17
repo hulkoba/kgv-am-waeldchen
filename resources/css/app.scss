@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Poppins");
+
+// Set your brand colors
+$pink: #FA7C91;
+
+$forest-green: #3a4a3d;
+$fceladonn: #96ad90;
+$rose-quartz: #f4b9b8;
+$peach: #f7d6c0;
+
+$red-orange: #e55b13;
+$orange: #f6a21e;
+
+$sage-green: #535e4b;
+$sage: #c1c2ad;
+$cognac: #b5a4a3;
+
+$taupe: #e9e6e2;
+$purple-haze: #4f3750;
+$desert-sun: #cb9870;
+
+// Update Bulma's global variables
+$primary: $forest-green;
+$primary: $sage-green;
+$light: scale-color($taupe, $lightness: +33%);
+$link: $purple-haze;
+
+$family-sans-serif: "Nunito", sans-serif;
+$title-color: $primary;
+// $primary: $purple;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+@import "../../node_modules/bulma/bulma.sass";
+
+html {
+  width: 100%;
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .wrapper {
+    flex: 1;
+  }
+
+  .footer {
+    line-height: 33px;
+    background: $forest-green;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    color: $sage;
+    font-size: 1em;
+    a {
+      font-size: 1.2em;
+      color: $peach;
+      padding: 0 1rem 1rem 1rem;
+      &:hover {
+        color: lighten($peach, 11%);
+      }
+    }
+  }
+}
+
+
+pre {
+  white-space: pre-wrap; /* css-3 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+ }
+
+h1.title.is-1 {
+  font-size: 2rem;
+}
+h2.title.is-2 {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+.title.is-3 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+details {
+  cursor: pointer;
+  margin-bottom: 22px;
+  summary {
+    margin-bottom: 6px;
+    .title {
+      font-weight: 400;
+      color: $link;
+      line-height: 24px;
+    }
+  }
+}
+
+ul li {
+  list-style-type: none;
+}
+a.navbar-item:hover {
+  background-color: scale-color($taupe, $lightness: +22%);
+  color: $purple-haze;
+}
+
+.message.is-primary {
+  .message-header {
+    // color: $sage;
+    background-color: scale-color($forest-green, $lightness: +22%);
+  }
+}
