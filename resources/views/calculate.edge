@@ -26,7 +26,7 @@
 
       <div class="columns">
         <div class="column">
-          <label class="label">Beetfläche in m²</label>
+          <label class="label mt-5">Beetfläche in m²</label>
           <input class="input" type="number" name="vegetables" placeholder="33" required
           @if(calculation.vegetables)
           value="{{calculation.vegetables}}"
@@ -35,7 +35,16 @@
         </div>
 
         <div class="column">
-          <label class="label">Beetlänge von Blumenanlagen</label>
+          <label class="label">Gewächshaus Grundfläche in m²</label>
+          <input class="input" type="number" name="greenhouse" placeholder="10"
+          @if(calculation.greenhouse)
+          value="{{calculation.greenhouse}}"
+          @endif
+          >
+        </div>
+
+        <div class="column">
+          <label class="label">Beetlänge von Blumenanlagen in m</label>
           <input class="input" type="number" name="flowers" placeholder="3"
           @if(calculation.flowers)
           value="{{calculation.flowers}}"
@@ -88,7 +97,7 @@
       <div class="columns">
         <div class="column">
           <label class="label">Beerensträucher</label>
-          <p class="help">Johannesbeere, Stachelbeere, veredelte Obstgewächse</p>
+          <p class="help">Johannisbeere, Stachelbeere, veredelte Obstgewächse</p>
           <input class="input" type="number" name="beeren" placeholder="3"
           @if(calculation.beeren)
           value="{{calculation.beeren}}"
@@ -101,6 +110,25 @@
           <input class="input" type="number" name="spalierobst" placeholder="3"
           @if(calculation.spalierobst)
           value="{{calculation.spalierobst}}"
+          @endif
+          >
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <label class="label">Komposter</label>
+          <input class="input" type="number" name="composter" placeholder="1"
+          @if(calculation.composter)
+          value="{{calculation.composter}}"
+          @endif
+          >
+        </div>
+        <div class="column">
+          <label class="label">Regentonne oder Wassertank</label>
+          <input class="input" type="number" name="watertank" placeholder="3"
+          @if(calculation.watertank)
+          value="{{calculation.watertank}}"
           @endif
           >
         </div>
