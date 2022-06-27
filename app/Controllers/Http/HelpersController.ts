@@ -17,7 +17,12 @@ export default class HelpersController {
     const beeren = body.beeren && parseFloat(body.beeren)
     const spalierobst = body.spalierobst && parseFloat(body.spalierobst) * 0.5
 
-    const sum = bed + greenhouse + flowers + halbstamm + niederstamm + buschbaum + spindel + beeren + spalierobst
+    const composter = body.composter && parseFloat(body.composter)
+    const watertank = body.watertank && parseFloat(body.watertank)
+
+    const sum = bed + greenhouse + flowers +
+     halbstamm + niederstamm + buschbaum + spindel +
+     beeren + spalierobst + composter + watertank
     const result = (100 * sum) / size
 
     const calculation = {
