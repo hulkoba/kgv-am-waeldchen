@@ -26,7 +26,7 @@
 
       <div class="columns">
         <div class="column">
-          <label class="label">Beetfläche in m²</label>
+          <label class="label mt-5">Beetfläche in m²</label>
           <input class="input" type="number" name="vegetables" placeholder="33" required
           @if(calculation.vegetables)
           value="{{calculation.vegetables}}"
@@ -35,7 +35,16 @@
         </div>
 
         <div class="column">
-          <label class="label">Beetlänge von Blumenanlagen</label>
+          <label class="label">Gewächshaus Grundfläche in m²</label>
+          <input class="input" type="number" name="greenhouse" placeholder="10"
+          @if(calculation.greenhouse)
+          value="{{calculation.greenhouse}}"
+          @endif
+          >
+        </div>
+
+        <div class="column">
+          <label class="label">Beetlänge von Blumenanlagen in m</label>
           <input class="input" type="number" name="flowers" placeholder="3"
           @if(calculation.flowers)
           value="{{calculation.flowers}}"
