@@ -64,6 +64,12 @@ html {
   }
 }
 
+nav {
+  a.navbar-item:hover {
+    background-color: scale-color($taupe, $lightness: +44%);
+    color: $purple-haze;
+  }
+}
 
 pre {
   white-space: pre-wrap; /* css-3 */
@@ -98,10 +104,6 @@ details {
 
 ul li {
   list-style-type: none;
-}
-a.navbar-item:hover {
-  background-color: scale-color($taupe, $lightness: +22%);
-  color: $purple-haze;
 }
 
 .message.is-primary {
