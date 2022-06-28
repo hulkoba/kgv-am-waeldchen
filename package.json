@@ -1,12 +1,13 @@
 {
-  "name": "amWaeldchen",
+  "name": "kgv-am-waeldchen",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
     "start": "node server.js",
-    "lint": "eslint . --ext=.ts"
+    "lint": "eslint . --ext=.ts",
+    "test": "node ace test"
   },
   "eslintConfig": {
     "extends": [
