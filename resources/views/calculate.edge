@@ -10,13 +10,13 @@
   </article>
   @endif
   <form class="calculate-garden-form" action="/anbau" method="POST">
-  {{--  {{ csrfField() }}  --}}
+  {{ csrf }}
   <div class="columns">
     <div class="column is-10">
       <div class="columns">
         <div class="column is-8">
           <label class="label">Größe des Grundstücks in m²</label>
-          <input class="input" type="number" name="size" placeholder="350"
+          <input class="input" type="number" name="size"
           @if(calculation.size)
           value="{{calculation.size}}"
           @endif
@@ -27,7 +27,7 @@
       <div class="columns">
         <div class="column">
           <label class="label mt-5">Beetfläche in m²</label>
-          <input class="input" type="number" name="vegetables" placeholder="33" required
+          <input class="input" type="number" name="vegetables" required
           @if(calculation.vegetables)
           value="{{calculation.vegetables}}"
           @endif
@@ -36,7 +36,7 @@
 
         <div class="column">
           <label class="label">Gewächshaus Grundfläche in m²</label>
-          <input class="input" type="number" name="greenhouse" placeholder="10"
+          <input class="input" type="number" name="greenhouse"
           @if(calculation.greenhouse)
           value="{{calculation.greenhouse}}"
           @endif
@@ -45,7 +45,7 @@
 
         <div class="column">
           <label class="label">Beetlänge von Blumenanlagen in m</label>
-          <input class="input" type="number" name="flowers" placeholder="3"
+          <input class="input" type="number" name="flowers"
           @if(calculation.flowers)
           value="{{calculation.flowers}}"
           @endif
@@ -56,8 +56,8 @@
       <div class="columns">
         <div class="column">
           <label class="label">Hoch- oder Halbstamm</label>
-          <p class="help">Süßkirsche, Apfel</p>
-          <input class="input" type="number" name="halbstamm" placeholder="3"
+          <p class="help">Stammhöhe ab 100&thinsp;cm</p>
+          <input class="input" type="number" name="halbstamm"
           @if(calculation.halbstamm)
           value="{{calculation.halbstamm}}"
           @endif
@@ -65,7 +65,7 @@
         </div>
         <div class="column">
           <label class="label">Niederstamm</label>
-          <p class="help">Apfel, Pflaume, Birne, Mirabelle</p>
+          <p class="help">Stammhöhe von 60 bis 100&thinsp;cm</p>
           <input class="input" type="number" name="niederstamm" placeholder="3"
           @if(calculation.niederstamm)
           value="{{calculation.niederstamm}}"
@@ -76,7 +76,7 @@
       <div class=columns>
         <div class="column">
           <label class="label">Buschbaum</label>
-          <p class="help">Sauerkirsche, Birne, Pfirsich</p>
+          <p class="help">Stammhöhe von 40 bis 60&thinsp;cm</p>
           <input class="input" type="number" name="buschbaum" placeholder="3"
           @if(calculation.buschbaum)
           value="{{calculation.buschbaum}}"
@@ -85,7 +85,7 @@
         </div>
         <div class="column">
           <label class="label">Spindel</label>
-          <p class="help">Sauerkirsche, Birne, Apfel</p>
+          <p class="help">Stammlänge von etwa 40 bis 60 cm</p>
           <input class="input" type="number" name="spindel" placeholder="3"
           @if(calculation.spindel)
           value="{{calculation.spindel}}"

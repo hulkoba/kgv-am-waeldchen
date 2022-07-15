@@ -29,6 +29,6 @@ export default class HelpersController {
       ...body,
       result: result.toFixed(2),
     }
-    return view.render('calculate', { calculation })
+    return view.render('calculate', { calculation, csrf: body.csrfField() })
   }
 }
