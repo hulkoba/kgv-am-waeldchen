@@ -9,64 +9,28 @@
   @entryPointScripts('app')
 </head>
 
-<body class="has-navbar-fixed-top">
-  <nav class="navbar has-shadow is-fixed-top is-light" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand ml-5">
-      <div class="navbar-item is-size-5">Am Wäldchen</div>
-
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+<body>
+  <div class='sidebar'>
+    <nav class="sidebar-main" aria-label="Sidebar">
+      <a href="/">Der Verein</a>
+      <a href="/aktuelles">Termine</a>
+      <a href="/rechtliches">Rechtliches</a>
+      <a href="/antraege">Anträge</a>
+      <a href="/faq">FAQ</a>
+      <a href="/anbau">Nutzfläche berechnen</a>
+    </nav>
+    <div class='sidebar-bottom'>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutzerklärung</a>
     </div>
-    <div id="navMenu" class="navbar-menu">
-        <a class="navbar-item" href="/">
-          Der Verein
-        </a>
-        <a class="navbar-item" href="/aktuelles">
-          Aktuelles und Termine
-        </a>
-        <a class="navbar-item" href="/faq">
-          FAQ
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <div class="wrapper">
-    <section class="section main">
-      <div class="container">
-        @!section('content')
-      </div>
-    </section>
   </div>
-  <footer class="footer">
-    <div class="content columns">
 
-      <ul class="column">
-        <li>Kleingartenverein e.V. "Am Wäldchen"</li>
-        <li>Am Wäldchen</li>
-        <li>15344 Strausberg</li>
-      </ul>
-      <ul class="column">
-        <li><a href="/aktuelles">Termine</a></li>
-        <li><a href="/anbau">Nutzfläche berechnen</a></li>
-        <li><a href="/faq">FAQ</a></li>
-      </ul>
-
-      <ul class="column">
-        <li><a href="/antraege">Anträge</a></li>
-        <li><a href="/rechtliches">Rechtliches</a></li>
-      </ul>
-      <ul class="column">
-        <li><a href="/kontakt">Kontakt</a></li>
-        <li><a href="/impressum">Impressum</a></li>
-        <li><a href="/datenschutz">Datenschutzerklärung</a></li>
-      </ul>
+  <section class="main mt-6">
+    <div class="container">
+      @!section('content')
     </div>
-  </footer>
-
+  </section>
 </body>
 </html>
 <script>

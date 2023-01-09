@@ -2,19 +2,15 @@
 
 // Set your brand colors
 $pink: #FA7C91;
-
 $forest-green: #3a4a3d;
 $fceladonn: #96ad90;
 $rose-quartz: #f4b9b8;
 $peach: #f7d6c0;
-
 $red-orange: #e55b13;
 $orange: #f6a21e;
-
 $sage-green: #535e4b;
 $sage: #c1c2ad;
 $cognac: #b5a4a3;
-
 $taupe: #e9e6e2;
 $purple-haze: #4f3750;
 $desert-sun: #cb9870;
@@ -22,12 +18,12 @@ $desert-sun: #cb9870;
 // Update Bulma's global variables
 $primary: $forest-green;
 $primary: $sage-green;
+// $primary: $purple;
 $light: scale-color($taupe, $lightness: +33%);
 $link: $purple-haze;
 
 $family-sans-serif: "Nunito", sans-serif;
 $title-color: $primary;
-// $primary: $purple;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
@@ -39,37 +35,57 @@ html {
   body {
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
   }
-
-  .wrapper {
+  .sidebar {
+    display: flex;
+    min-height: 0;
+    max-width: 275px;
     flex: 1;
-  }
-
-  .footer {
-    line-height: 33px;
+    flex-direction: column;
     background: $forest-green;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
-    color: $sage;
-    font-size: 1em;
-    a {
-      font-size: 1.2em;
+    padding: 0.3rem;
+
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+
+    .sidebar-main {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
       color: $peach;
-      padding: 0 1rem 1rem 1rem;
+      padding-top: 3rem;
+    }
+    .sidebar-bottom {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      border-top: 1px solid $sage-green;
+      padding: 4px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 1em;
+      color: $peach;
+      padding: 0.8rem;
+      border-radius: 4px;
       &:hover {
-        color: lighten($peach, 11%);
+        color: lighten($peach, 9%);
+        background-color: lighten($forest-green, 4%);
       }
     }
   }
-}
 
-nav {
-  a.navbar-item:hover {
-    background-color: scale-color($taupe, $lightness: +44%);
-    color: $purple-haze;
+  .main {
+    display: flex;
+    flex-grow: 1;
   }
 }
+// background-color: scale-color($taupe, $lightness: +22%);
+// color: $purple-haze;
 
 pre {
   white-space: pre-wrap; /* css-3 */

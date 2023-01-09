@@ -36,18 +36,9 @@
 
         <div class="column">
           <label class="label">Gewächshaus Grundfläche in m²</label>
-          <input class="input" type="number" name="greenhouse" placeholder="10"
+          <input class="input" type="number" name="greenhouse" placeholder="8"
           @if(calculation.greenhouse)
           value="{{calculation.greenhouse}}"
-          @endif
-          >
-        </div>
-
-        <div class="column">
-          <label class="label">Beetlänge von Blumenanlagen in m</label>
-          <input class="input" type="number" name="flowers" placeholder="3"
-          @if(calculation.flowers)
-          value="{{calculation.flowers}}"
           @endif
           >
         </div>
@@ -56,7 +47,7 @@
       <div class="columns">
         <div class="column">
           <label class="label">Hoch- oder Halbstamm</label>
-          <p class="help">Süßkirsche, Apfel</p>
+          <p class="help">Kronenansatz ab 100 cm Höhe</p>
           <input class="input" type="number" name="halbstamm" placeholder="3"
           @if(calculation.halbstamm)
           value="{{calculation.halbstamm}}"
@@ -65,7 +56,7 @@
         </div>
         <div class="column">
           <label class="label">Niederstamm</label>
-          <p class="help">Apfel, Pflaume, Birne, Mirabelle</p>
+          <p class="help">Kronenansatz ab 80 cm Höhe</p>
           <input class="input" type="number" name="niederstamm" placeholder="3"
           @if(calculation.niederstamm)
           value="{{calculation.niederstamm}}"
@@ -76,7 +67,7 @@
       <div class=columns>
         <div class="column">
           <label class="label">Buschbaum</label>
-          <p class="help">Sauerkirsche, Birne, Pfirsich</p>
+          <p class="help">Kronenansatz ab 40 cm Höhe</p>
           <input class="input" type="number" name="buschbaum" placeholder="3"
           @if(calculation.buschbaum)
           value="{{calculation.buschbaum}}"
@@ -85,7 +76,7 @@
         </div>
         <div class="column">
           <label class="label">Spindel</label>
-          <p class="help">Sauerkirsche, Birne, Apfel</p>
+          <p class="help">Kronenansatz ab 40 cm Höhe</p>
           <input class="input" type="number" name="spindel" placeholder="3"
           @if(calculation.spindel)
           value="{{calculation.spindel}}"
@@ -129,6 +120,16 @@
           <input class="input" type="number" name="watertank" placeholder="3"
           @if(calculation.watertank)
           value="{{calculation.watertank}}"
+          >
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-half">
+          <label class="label">Beetlänge von Blumenanlagen</label>
+          <input class="input" type="number" name="flowers" placeholder="3"
+          @if(calculation.flowers)
+          value="{{calculation.flowers}}"
           @endif
           >
         </div>
@@ -136,7 +137,7 @@
 
       <div class="is-right mt-5 buttons">
         <a class="button" href="/">Abbrechen</a>
-        <button class="button is-primary" type="submit">Berechne</button>
+        <button class="button is-primary" type="submit">Berechne Nutzfläche</button>
       </div>
     </div>
   </form>
