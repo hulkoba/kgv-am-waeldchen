@@ -34,21 +34,22 @@ html {
 
   body {
     display: flex;
+    flex-direction: row;
     min-height: 100vh;
   }
   .sidebar {
     display: flex;
-    min-height: 0;
-    max-width: 275px;
     flex: 1;
     flex-direction: column;
+    // min-height: 0;
+    max-width: 222px;
     background: $forest-green;
     padding: 0.3rem;
 
     position: fixed;
-    overflow-y: scroll;
     top: 0;
     bottom: 0;
+    overflow-x: hidden;
 
     .sidebar-main {
       display: flex;
@@ -67,8 +68,6 @@ html {
 
     a {
       display: flex;
-      align-items: center;
-      font-size: 1em;
       color: $peach;
       padding: 0.8rem;
       border-radius: 4px;
@@ -81,7 +80,12 @@ html {
 
   .main {
     display: flex;
-    flex-grow: 1;
+    flex-direction: row;
+    flex: 1;
+    @include until(1408px) {
+      margin-left: 222px;
+      padding: 12px;
+    }
   }
 }
 // background-color: scale-color($taupe, $lightness: +22%);

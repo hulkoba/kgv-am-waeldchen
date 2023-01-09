@@ -11,12 +11,10 @@
   @endif
   <form class="calculate-garden-form" action="/anbau" method="POST">
   {{--  {{ csrfField() }}  --}}
-  <div class="columns">
-    <div class="column is-10">
-      <div class="columns">
+    <div class="columns">
         <div class="column is-8">
           <label class="label">Größe des Grundstücks in m²</label>
-          <input class="input" type="number" name="size" placeholder="350"
+          <input class="input" type="number" name="size" placeholder="350" required
           @if(calculation.size)
           value="{{calculation.size}}"
           @endif
@@ -26,7 +24,7 @@
 
       <div class="columns">
         <div class="column">
-          <label class="label mt-5">Beetfläche in m²</label>
+          <label class="label">Beetfläche in m²</label>
           <input class="input" type="number" name="vegetables" placeholder="33" required
           @if(calculation.vegetables)
           value="{{calculation.vegetables}}"
@@ -117,9 +115,10 @@
         </div>
         <div class="column">
           <label class="label">Regentonne oder Wassertank</label>
-          <input class="input" type="number" name="watertank" placeholder="3"
+          <input class="input" type="number" name="watertank" placeholder="2"
           @if(calculation.watertank)
           value="{{calculation.watertank}}"
+          @endif
           >
         </div>
       </div>
