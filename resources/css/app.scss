@@ -18,7 +18,6 @@ $desert-sun: #cb9870;
 // Update Bulma's global variables
 $primary: $forest-green;
 $primary: $sage-green;
-// $primary: $purple;
 $light: scale-color($taupe, $lightness: +33%);
 $link: $purple-haze;
 
@@ -41,7 +40,6 @@ html {
     display: flex;
     flex: 1;
     flex-direction: column;
-    // min-height: 0;
     max-width: 222px;
     background: $forest-green;
     padding: 0.3rem;
@@ -88,8 +86,6 @@ html {
     }
   }
 }
-// background-color: scale-color($taupe, $lightness: +22%);
-// color: $purple-haze;
 
 pre {
   white-space: pre-wrap; /* css-3 */
@@ -100,7 +96,7 @@ h1.title.is-1 {
   font-size: 2rem;
 }
 h2.title.is-2 {
-  margin-top: 1rem;
+  margin-top: 1.8rem;
   font-size: 1.8rem;
 }
 .title.is-3 {
