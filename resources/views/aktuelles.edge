@@ -11,14 +11,14 @@
         <a
         class="is-primary ml-2"
         target="_blank"
-        href="https://mol.wastebox.gemos-management.de/Gemos/WasteBox/Frontend/TourSchedule/Raw/Name/2023/List/586668/2696,2697/Print/pdf/Color/Abfuhrtermine.pdf">
+        href="{{process.env.EMO_PDF}}">
         Kalender
       </a>
     </div>
 
       <h3 class="title is-3">URL in Kalender-App einbinden</h3>
       <p>Oder die folgende URL direkt in Eure Kalender-App kopieren:</p>
-      <pre>https://mol.wastebox.gemos-management.de/Gemos/WasteBox/Frontend/TourSchedule/Raw/Name/2023/List/586668/2696,2697/Print/ics/Default/Abfuhrtermine.ics</pre>
+      <pre>{{process.env.EMO_ICS}}</pre>
     </div>
   </div>
 
