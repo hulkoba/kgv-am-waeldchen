@@ -1,11 +1,15 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async ({ view }) => {
-  return view.render('home')
+  return view.render('aktuelles')
 })
 
 Route.get('/aktuelles', async ({ view }) => {
   return view.render('aktuelles')
+})
+
+Route.get('/verein', async ({ view }) => {
+  return view.render('home')
 })
 
 Route.get('/kontakt', async ({ view }) => {

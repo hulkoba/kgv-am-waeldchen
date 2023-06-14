@@ -1,36 +1,44 @@
 @layout('master')
 @section('content')
-  <h1 class="title">Aktuelles und Termine</h1>
+  <h1 class="title">Aktuelles</h1>
 
-  <div class="message is-primary">
-    <p class="message-header">Müllabfuhr - Tourenplan 2022</p>
-    <div class="message-body">
-      <h3 class="title is-3">Link zum pdf</h3>
-      <div class="is-flex is-align-items-center">
-        <span>Ihr könnt euch den Kalender der Abfuhrtermine als pdf ansehen:</span>
-        <a
-        class="is-primary ml-2"
-        target="_blank"
-        href="{{process.env.EMO_PDF}}">
-        Kalender
-      </a>
+  <div class="columns">
+  <div class="column is-10">
+
+    <div class="message is-light">
+      <p class="message-header">Wahl des neuen Vorstands</p>
+      <div class="message-body">
+        <span>Ihr könnt euch den Kalender der Abfuhrtermine als pdf ansehen:
+        Ihr könnt euch den Kalender der Abfuhrtermine als pdf ansehen:
+        Ihr könnt euch den Kalender der Abfuhrtermine als pdf ansehen:
+        Ihr könnt euch den Kalender der Abfuhrtermine als pdf ansehen:</span>
     </div>
+  </div>
+
+
+  </div>
+  <div class="column ">
+
+    <div class="message is-primary">
+      <p class="message-header">Müllabfuhr - Tourenplan 2022</p>
+      <div class="message-body">
+        <h3 class="title is-3">Link zum pdf</h3>
+        <div class="is-flex is-align-items-center">
+          <span>Ihr könnt euch den Kalender der Abfuhrtermine als pdf ansehen:</span>
+          <a
+          class="is-primary ml-2"
+          target="_blank"
+          href="{{process.env.EMO_PDF}}">
+          Kalender
+        </a>
+      </div>
 
       <h3 class="title is-3">URL in Kalender-App einbinden</h3>
       <p>Oder die folgende URL direkt in Eure Kalender-App kopieren:</p>
       <pre>{{process.env.EMO_ICS}}</pre>
     </div>
   </div>
-
-  <div class="message is-light">
-    <p class="message-header">Gemeinschaftsarbeit</p>
-    <div class="message-body">
-      <h3 class="title is-3">Wann</h3>
-      Oktober 2020, 10Uhr
-      <h3 class="title is-3">Treffpunkt</h3>
-      Vereinsplatz
-      <h3 class="title is-3">Anstehende Arbeiten</h3>
-      Rasen mähen
-    </div>
   </div>
+</div>
+
 @endsection
