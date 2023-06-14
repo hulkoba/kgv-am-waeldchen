@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
   <title>Am Wäldchen</title>
   @entryPointStyles('app')
   @entryPointScripts('app')
@@ -26,30 +25,9 @@
     </div>
   </div>
 
-  <div class="main my-6">
-    <div class="container">
-      @!section('content')
-    </div>
+
+  <div class="bg-white my-6 mx-auto max-w-screen-md divide-y divide-gray-900/10">
+    @!section('content')
   </div>
 </body>
 </html>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-    // Add a click event on each of them
-    $navbarBurgers.forEach( el => {
-      el.addEventListener('click', () => {
-
-        // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-      });
-    });
-  });
-</script>
