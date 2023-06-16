@@ -28,7 +28,7 @@ Route.get('/rechtliches', async ({ view }) => {
 })
 
 Route.get('/dokumente', async ({ view }) => {
-  return view.render('antraege')
+  return view.render('dokumente')
 })
 
 Route.get('/impressum', async ({ view }) => {
