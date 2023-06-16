@@ -9,11 +9,7 @@ Route.get('/aktuelles', async ({ view }) => {
 })
 
 Route.get('/verein', async ({ view }) => {
-  return view.render('home')
-})
-
-Route.get('/kontakt', async ({ view }) => {
-  return view.render('kontakt')
+  return view.render('verein')
 })
 
 Route.get('/faq', async ({ view }) => {
@@ -27,8 +23,8 @@ Route.get('/rechtliches', async ({ view }) => {
   return view.render('rechtliches')
 })
 
-Route.get('/antraege', async ({ view }) => {
-  return view.render('antraege')
+Route.get('/dokumente', async ({ view }) => {
+  return view.render('dokumente')
 })
 
 Route.get('/impressum', async ({ view }) => {

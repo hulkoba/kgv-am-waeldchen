@@ -1,143 +1,144 @@
 @layout('master')
+@set('activeRoute', 'anbau')
 @section('content')
-  <h1 class="title">Berechnung der Nutzfläche</h1>
-  <p class="content">In allen Kleingärten sind auf mindestens ein Drittel der Fläche Obst- und Gemüse anzubauen. Hier kannst du prüfen, ob du genug Anbaufläche hast.</p>
+<h1 class="text-3xl mb-6 font-bold tracking-tight text-gray-900 sm:text-4xl">Berechnung der Nutzfläche</h1>
+<p class="my-2 text-lg leading-8 text-gray-600">
+  In allen Kleingärten sind auf mindestens ein Drittel der Fläche Obst- und Gemüse anzubauen. Hier kannst du prüfen, ob du genug Anbaufläche hast.
+</p>
   @if(calculation.result)
-  <article class="message is-link">
-    <div class="message-body">
+  <article class="rounded-md bg-teal-50 p-6">
+    <div class="text-teal-900">
       Deine Nutzfläche beträgt <strong>{{calculation.result}}&nbsp;%</strong> der Gesamtfläche.
     </div>
   </article>
   @endif
-  <form class="calculate-garden-form" action="/anbau" method="POST">
+  <form class="calculate-garden-form pb-12" action="/anbau" method="POST">
   {{--  {{ csrfField() }}  --}}
-    <div class="columns">
-        <div class="column is-8">
-          <label class="label">Größe des Grundstücks in m²</label>
-          <input class="input" type="number" name="size" placeholder="350" required
-          @if(calculation.size)
-          value="{{calculation.size}}"
-          @endif
-          >
-        </div>
-      </div>
+  <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-4">
+    <div class="sm:col-span-3">
+      @!input({
+        'label': 'Größe des Grundstücks in m²',
+        'name': 'size',
+        'type': 'number',
+        'placeholder': '330',
+        'value': calculation.size
+      })
+    </div>
 
-      <div class="columns">
-        <div class="column">
-          <label class="label">Beetfläche in m²</label>
-          <input class="input" type="number" name="vegetables" placeholder="33" required
-          @if(calculation.vegetables)
-          value="{{calculation.vegetables}}"
-          @endif
-          >
-        </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Beetfläche in m²',
+        'name': 'vegetables',
+        'type': 'number',
+        'placeholder': '30',
+        'value': calculation.vegetables
+      })
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Gewächshaus Grundfläche in m²',
+        'name': 'greenhouse',
+        'type': 'number',
+        'placeholder': '8',
+        'value': calculation.greenhouse
+      })
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Hoch- oder Halbstamm',
+        'name': 'halbstamm',
+        'type': 'number',
+        'helper': 'Kronenansatz ab 100 cm Höhe',
+        'placeholder': '1',
+        'value': calculation.halbstamm
+      })
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Niederstamm',
+        'name': 'niederstamm',
+        'type': 'number',
+        'helper': 'Kronenansatz ab 80 cm Höhe',
+        'placeholder': '1',
+        'value': calculation.niederstamm
+      })
+      <p class="help"></p>
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Buschbaum',
+        'name': 'buschbaum',
+        'type': 'number',
+        'helper': 'Kronenansatz ab 40 cm Höhe',
+        'placeholder': '1',
+        'value': calculation.buschbaum
+      })
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Spindel',
+        'name': 'spindel',
+        'type': 'number',
+        'helper': 'Kronenansatz ab 40 cm Höhe',
+        'placeholder': '1',
+        'value': calculation.spindel
+      })
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Beerensträucher',
+        'name': 'beeren',
+        'type': 'number',
+        'helper': 'Johannisbeere, Stachelbeere, veredelte Obstgewächse',
+        'placeholder': '1',
+        'value': calculation.beeren
+      })
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Beetlänge von Ranken oder Spalierobst',
+        'name': 'spalierobst',
+        'type': 'number',
+        'helper': 'Brombeere, Himbeere, Kiwi, Wein',
+        'placeholder': '1',
+        'value': calculation.spalierobst
+      })
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Komposter',
+        'name': 'composter',
+        'type': 'number',
+        'placeholder': '1',
+        'value': calculation.composter
+      })
+    </div>
+    <div class="sm:col-span-2">
+      @!input({
+        'label': 'Regentonne oder Wassertank',
+        'name': 'watertank',
+        'type': 'number',
+        'placeholder': '2',
+        'value': calculation.watertank
+      })
+    </div>
+    <div class="sm:col-span-3">
+      @!input({
+        'label': 'Beetlänge von Blumenanlagen',
+        'name': 'flowers',
+        'type': 'number',
+        'placeholder': '2',
+        'value': calculation.flowers
+      })
+    </div>
 
-        <div class="column">
-          <label class="label">Gewächshaus Grundfläche in m²</label>
-          <input class="input" type="number" name="greenhouse" placeholder="8"
-          @if(calculation.greenhouse)
-          value="{{calculation.greenhouse}}"
-          @endif
-          >
-        </div>
-      </div>
-
-      <div class="columns">
-        <div class="column">
-          <label class="label">Hoch- oder Halbstamm</label>
-          <p class="help">Kronenansatz ab 100 cm Höhe</p>
-          <input class="input" type="number" name="halbstamm" placeholder="3"
-          @if(calculation.halbstamm)
-          value="{{calculation.halbstamm}}"
-          @endif
-          >
-        </div>
-        <div class="column">
-          <label class="label">Niederstamm</label>
-          <p class="help">Kronenansatz ab 80 cm Höhe</p>
-          <input class="input" type="number" name="niederstamm" placeholder="3"
-          @if(calculation.niederstamm)
-          value="{{calculation.niederstamm}}"
-          @endif
-          >
-        </div>
-      </div>
-      <div class=columns>
-        <div class="column">
-          <label class="label">Buschbaum</label>
-          <p class="help">Kronenansatz ab 40 cm Höhe</p>
-          <input class="input" type="number" name="buschbaum" placeholder="3"
-          @if(calculation.buschbaum)
-          value="{{calculation.buschbaum}}"
-          @endif
-          >
-        </div>
-        <div class="column">
-          <label class="label">Spindel</label>
-          <p class="help">Kronenansatz ab 40 cm Höhe</p>
-          <input class="input" type="number" name="spindel" placeholder="3"
-          @if(calculation.spindel)
-          value="{{calculation.spindel}}"
-          @endif
-          >
-        </div>
-      </div>
-
-      <div class="columns">
-        <div class="column">
-          <label class="label">Beerensträucher</label>
-          <p class="help">Johannisbeere, Stachelbeere, veredelte Obstgewächse</p>
-          <input class="input" type="number" name="beeren" placeholder="3"
-          @if(calculation.beeren)
-          value="{{calculation.beeren}}"
-          @endif
-          >
-        </div>
-        <div class="column">
-          <label class="label">Beetlänge von Ranken oder Spalierobst</label>
-          <p class="help">Brombeere, Himbeere, Kiwi, Wein</p>
-          <input class="input" type="number" name="spalierobst" placeholder="3"
-          @if(calculation.spalierobst)
-          value="{{calculation.spalierobst}}"
-          @endif
-          >
-        </div>
-      </div>
-
-      <div class="columns">
-        <div class="column">
-          <label class="label">Komposter</label>
-          <input class="input" type="number" name="composter" placeholder="1"
-          @if(calculation.composter)
-          value="{{calculation.composter}}"
-          @endif
-          >
-        </div>
-        <div class="column">
-          <label class="label">Regentonne oder Wassertank</label>
-          <input class="input" type="number" name="watertank" placeholder="2"
-          @if(calculation.watertank)
-          value="{{calculation.watertank}}"
-          @endif
-          >
-        </div>
-      </div>
-
-      <div class="columns">
-        <div class="column is-half">
-          <label class="label">Beetlänge von Blumenanlagen</label>
-          <input class="input" type="number" name="flowers" placeholder="3"
-          @if(calculation.flowers)
-          value="{{calculation.flowers}}"
-          @endif
-          >
-        </div>
-      </div>
-
-      <div class="is-right mt-5 buttons">
-        <a class="button" href="/">Abbrechen</a>
-        <button class="button is-primary" type="submit">Berechne Nutzfläche</button>
-      </div>
+    <div class="col-span-full mt-6 flex justify-end gap-x-6">
+      <a class="rounded text-sm font-semibold px-3 py-2 leading-6 text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 bg-white" href="/">Abbrechen</a>
+      <button
+        class="rounded bg-teal-800 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-700 min-w-max"
+        type="submit">
+        Berechne Nutzfläche
+      </button>
     </div>
   </form>
 

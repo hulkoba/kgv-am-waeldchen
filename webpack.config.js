@@ -156,7 +156,7 @@ Encore.configureDevServerOptions((options) => {
 | favorite CSS precompiler
 |
 */
-Encore.enableSassLoader()
+// Encore.enableSassLoader()
 // Encore.enableLessLoader()
 // Encore.enableStylusLoader()
 
@@ -169,8 +169,8 @@ Encore.enableSassLoader()
 | PostCSS or CSS.
 |
 */
-// Encore.enablePostCssLoader()
-Encore.configureCssLoader(() => {})
+Encore.enablePostCssLoader()
+// Encore.configureCssLoader(() => {})
 
 /*
 |--------------------------------------------------------------------------
