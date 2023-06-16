@@ -9,7 +9,7 @@ Route.get('/aktuelles', async ({ view }) => {
 })
 
 Route.get('/verein', async ({ view }) => {
-  return view.render('home')
+  return view.render('verein')
 })
 
 Route.get('/kontakt', async ({ view }) => {
@@ -27,7 +27,7 @@ Route.get('/rechtliches', async ({ view }) => {
   return view.render('rechtliches')
 })
 
-Route.get('/antraege', async ({ view }) => {
+Route.get('/dokumente', async ({ view }) => {
   return view.render('antraege')
 })
 

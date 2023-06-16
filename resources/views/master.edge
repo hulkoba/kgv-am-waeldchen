@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="de">
+<html class="h-full bg-white" lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,26 +9,15 @@
   @entryPointScripts('app')
 </head>
 
-<body>
-  <div class='sidebar'>
-    <nav class="sidebar-main" aria-label="Sidebar">
-      <a href="/aktuelles">Aktuelles</a>
-      <a href="/verein">Unser Verein</a>
-      <a href="/rechtliches">Rechtliche Grundlagen</a>
-      <a href="/antraege">Dokumente</a>
-      <a href="/faq">FAQ</a>
-      <a href="/anbau">Nutzfläche berechnen</a>
-    </nav>
-    <div class='sidebar-bottom'>
-      <a href="/kontakt">Kontakt</a>
-      <a href="/impressum">Impressum</a>
-      <a href="/datenschutz">Datenschutzerklärung</a>
-    </div>
-  </div>
+<body class="h-full">
+  @!component('components/sidebar')
 
-
-  <div class="bg-white my-6 mx-auto max-w-screen-md divide-y divide-gray-900/10">
+  <div class="bg-white my-6 mx-auto max-w-screen-md">
     @!section('content')
   </div>
 </body>
+
+<aside class="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
+    <!-- Secondary column (hidden on smaller screens) -->
+</aside>
 </html>
