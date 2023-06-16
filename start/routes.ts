@@ -12,10 +12,6 @@ Route.get('/verein', async ({ view }) => {
   return view.render('verein')
 })
 
-Route.get('/kontakt', async ({ view }) => {
-  return view.render('kontakt')
-})
-
 Route.get('/faq', async ({ view }) => {
   return view.render('faq')
 })
