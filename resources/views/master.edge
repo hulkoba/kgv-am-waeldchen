@@ -10,7 +10,9 @@
 </head>
 
 <body class="h-full">
-  @!component('components/sidebar')
+  @!component('components/sidebar', {
+    activeRoute
+  })
 
   <div class="bg-white my-6 mx-auto max-w-screen-md">
     @!section('content')
