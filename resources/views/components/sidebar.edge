@@ -198,6 +198,15 @@
               "
               href="/datenschutz">Datenschutzerklärung</a>
           </li>
+          <li>
+            <a
+              class="{{navitem}} pb-6
+              @if(activeRoute === 'login')
+              {{isActive}}
+              @endif
+              "
+              href="/login">Anmelden</a>
+          </li>
         </div>
       </ul>
     </nav>

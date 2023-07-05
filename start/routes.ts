@@ -34,3 +34,7 @@ Route.get('/impressum', async ({ view }) => {
 Route.get('/datenschutz', async ({ view }) => {
   return view.render('datenschutz')
 })
+
+Route.get('/login', async ({ view }) => {
+  return view.render('login')
+})
