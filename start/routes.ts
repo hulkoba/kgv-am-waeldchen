@@ -1,5 +1,9 @@
 import Route from '@ioc:Adonis/Core/Route'
 
+Route.get('login', 'AuthController.loginShow').as('login.show')
+Route.post('login', 'AuthController.login').as('login')
+Route.post('logout', 'AuthController.logout').as('logout')
+
 Route.get('/', async ({ view }) => {
   return view.render('aktuelles')
 })
@@ -35,6 +39,3 @@ Route.get('/datenschutz', async ({ view }) => {
   return view.render('datenschutz')
 })
 
-Route.get('/login', async ({ view }) => {
-  return view.render('login')
-})

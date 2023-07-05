@@ -199,13 +199,19 @@
               href="/datenschutz">Datenschutzerklärung</a>
           </li>
           <li>
+            {{isLoggedIn}}
             <a
               class="{{navitem}} pb-6
               @if(activeRoute === 'login')
               {{isActive}}
               @endif
               "
-              href="/login">Anmelden</a>
+              @if(isLoggedIn)
+              href="{{route('logout')}}">Abmelden
+              @else
+              href="/login">Anmelden
+              @endif
+            </a>
           </li>
         </div>
       </ul>

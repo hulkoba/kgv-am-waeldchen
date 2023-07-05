@@ -1,7 +1,5 @@
 import { BaseCommand } from '@adonisjs/core/build/standalone'
 
-import crypto from 'crypto'
-
 export default class CreateUser extends BaseCommand {
   /**
    * Command name is used to run the command
@@ -32,9 +30,8 @@ export default class CreateUser extends BaseCommand {
   public async run () {
     const { default: User } = await import('../app/Models/User')
     const name = await this.prompt.ask('Enter name')
+    const password = await this.prompt.secure('Enter password')
 
-    // password will be changed by the user at the registration
-    const password = crypto.randomBytes(16).toString('hex')
     const data = { name, password }
     try {
       await User.create(data)

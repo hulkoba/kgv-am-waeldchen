@@ -11,10 +11,12 @@
 
 <body class="h-full">
   @!component('components/sidebar', {
-    activeRoute
+    activeRoute,
+    isLoggedIn: auth.user
   })
 
-  <main class="lg:pl-72 py-1 md:py-8 xl:pr-96">
+<main class="lg:pl-72 py-1 md:py-8 xl:pr-96">
+    {{ inspect({auth}) }}
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
       @!section('content')
     </div>
