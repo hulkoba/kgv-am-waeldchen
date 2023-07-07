@@ -4,13 +4,17 @@ Route.get('login', 'AuthController.loginShow').as('login.show')
 Route.post('login', 'AuthController.login').as('login')
 Route.post('logout', 'AuthController.logout').as('logout')
 
-Route.get('/', async ({ view }) => {
+Route.get('/new-post', async ({ view }) => {
   return view.render('aktuelles')
+}).middleware('auth')
+
+Route.get('/', ({ response }) => {
+  response.redirect().toRoute('/aktuelles')
 })
 
 Route.get('/aktuelles', async ({ view }) => {
   return view.render('aktuelles')
-})
+}).as('home')
 
 Route.get('/verein', async ({ view }) => {
   return view.render('verein')

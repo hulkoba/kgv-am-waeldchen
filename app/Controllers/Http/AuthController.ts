@@ -14,11 +14,12 @@ export default class AuthController {
       session.flash('loginError', 'Das hat nicht geklappt :(')
       return response.redirect(Route.makeUrl('login.show'))
     }
-    return response.redirect('/')
+    return response.redirect(Route.makeUrl('home'))
   }
 
-  public async logout ({ auth, session }: HttpContextContract) {
+  public async logout ({ auth, response, session }: HttpContextContract) {
     await auth.logout()
     session.flash('logoutInfo', 'Du bist abgemeldet')
+    return response.redirect(Route.makeUrl('home'))
   }
 }

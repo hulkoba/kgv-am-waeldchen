@@ -199,18 +199,24 @@
               href="/datenschutz">Datenschutzerklärung</a>
           </li>
           <li>
-            {{isLoggedIn}}
+            @if(auth.user)
+            <form action="{{ route('logout') }}" method="POST">
+              <button
+                type="submit"
+                class="{{navitem}} pb-6 w-full"
+                >Abmelden
+            </button>
+            </form>
+            @else
             <a
               class="{{navitem}} pb-6
               @if(activeRoute === 'login')
               {{isActive}}
               @endif
               "
-              @if(isLoggedIn)
-              href="{{route('logout')}}">Abmelden
-              @else
-              href="/login">Anmelden
-              @endif
+              href="{{route('login')}}">Anmelden
+            </a>
+            @endif
             </a>
           </li>
         </div>

@@ -12,11 +12,15 @@
 <body class="h-full">
   @!component('components/sidebar', {
     activeRoute,
-    isLoggedIn: auth.user
   })
 
-<main class="lg:pl-72 py-1 md:py-8 xl:pr-96">
-    {{ inspect({auth}) }}
+  <main class="lg:pl-72 py-1 md:py-8 xl:pr-96">
+    @if (flashMessages.has('logoutInfo'))
+    <div class="rounded-md bg-green-50 p-4 flex">
+      <p class="ml-3 text-sm font-medium text-green-800">{{ flashMessages.get('logoutInfo')}}</p>
+    </div>
+    @endif
+
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
       @!section('content')
     </div>
