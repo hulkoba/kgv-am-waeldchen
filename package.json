@@ -35,6 +35,7 @@
     "youch-terminal": "^2.1.4"
   },
   "dependencies": {
+    "@adonisjs/attachment-lite": "^1.0.7",
     "@adonisjs/auth": "^8.2.3",
     "@adonisjs/core": "^5.8.3",
     "@adonisjs/lucid": "^18.4.0",
