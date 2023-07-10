@@ -5,7 +5,7 @@ Route.post('login', 'AuthController.login').as('login')
 Route.post('logout', 'AuthController.logout').as('logout')
 
 Route.get('/new-post', async ({ view }) => {
-  return view.render('aktuelles')
+  return view.render('new-post')
 }).middleware('auth')
 
 Route.get('/', ({ response }) => {
