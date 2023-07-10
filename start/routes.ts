@@ -4,17 +4,14 @@ Route.get('login', 'AuthController.loginShow').as('login.show')
 Route.post('login', 'AuthController.login').as('login')
 Route.post('logout', 'AuthController.logout').as('logout')
 
-Route.get('/new-post', async ({ view }) => {
-  return view.render('aktuelles')
-}).middleware('auth')
-
 Route.get('/', ({ response }) => {
-  response.redirect().toRoute('/aktuelles')
+  response.redirect().toRoute('posts.index')
 })
 
-Route.get('/aktuelles', async ({ view }) => {
-  return view.render('aktuelles')
-}).as('home')
+Route.get('/aktuelles', 'PostsController.index').as('posts.index')
+Route.get('/new-post', 'PostsController.create').as('posts.create').middleware('auth')
+Route.post('/new-post', 'PostsController.store').as('posts.store').middleware('auth')
+Route.delete('/new-post/:id', 'PostsController.destroy').as('posts.destroy').middleware('auth')
 
 Route.get('/verein', async ({ view }) => {
   return view.render('verein')

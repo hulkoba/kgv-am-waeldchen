@@ -2,7 +2,7 @@
 @set('isActive', 'bg-gray-50 text-teal-700')
 
 <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-<div id="mobile-sidebar" class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
+<div id="mobile-sidebar" class="hidden z-50 lg:hidden" role="dialog" aria-modal="true">
   <div class="fixed inset-0 bg-gray-900/80"></div>
   <div class="fixed inset-0 flex">
     <div class="relative mr-16 flex w-full max-w-xs flex-1">
@@ -75,21 +75,10 @@
               {{isActive}}
               @endif
               ">
-
                 Nutzfläche berechnen</a>
             </li>
 
             <div class="mt-auto text-sm font-semibold leading-6 text-gray-400">
-              <li>
-                <a
-                href="/kontakt"
-                class="{{navitem}}
-                @if(activeRoute === 'kontakt')
-                {{isActive}}
-                @endif
-                ">
-                Kontakt</a>
-              </li>
               <li>
                 <a
                   class="{{navitem}}
@@ -107,6 +96,27 @@
                 @endif
                 "
                 href="/datenschutz">Datenschutzerklärung</a>
+              </li>
+              <li>
+                @if(auth.user)
+                <form action="{{ route('logout') }}" method="POST">
+                  <button
+                    type="submit"
+                    class="{{navitem}} w-full"
+                    >Abmelden
+                </button>
+                </form>
+                @else
+                <a
+                  class="{{navitem}} w-full
+                  @if(activeRoute === 'login')
+                  {{isActive}}
+                  @endif
+                  "
+                  href="{{route('login')}}">Anmelden
+                </a>
+                @endif
+                </a>
               </li>
             </div>
           </ul>
