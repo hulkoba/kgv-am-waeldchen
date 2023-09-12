@@ -9,9 +9,11 @@ Route.get('/', ({ response }) => {
 })
 
 Route.get('/aktuelles', 'PostsController.index').as('posts.index')
-Route.get('/new-post', 'PostsController.create').as('posts.create').middleware('auth')
-Route.post('/new-post', 'PostsController.store').as('posts.store').middleware('auth')
-Route.delete('/new-post/:id', 'PostsController.destroy').as('posts.destroy').middleware('auth')
+Route.get('/post', 'PostsController.create').as('posts.create').middleware('auth')
+Route.post('/post', 'PostsController.store').as('posts.store').middleware('auth')
+Route.get('/post/:id', 'PostsController.show').as('posts.show').middleware('auth')
+Route.put('/post/:id', 'PostsController.update').as('posts.update').middleware('auth')
+Route.get('/post/delete/:id', 'PostsController.destroy').as('posts.destroy').middleware('auth')
 
 Route.get('/verein', async ({ view }) => {
   return view.render('verein')

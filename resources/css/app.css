@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+a.disabled {
+  pointer-events: none;
+}
 details {
   cursor: pointer;
 }

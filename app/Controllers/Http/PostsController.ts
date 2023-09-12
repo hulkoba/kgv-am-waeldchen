@@ -14,7 +14,7 @@ export default class PostsController {
 
   // show add
   public async create ({ view }: HttpContextContract) {
-    return view.render('new-post')
+    return view.render('postNew')
   }
 
   public async store ({ request, response }: HttpContextContract) {
@@ -34,9 +34,26 @@ export default class PostsController {
     response.redirect(Route.builder().make('posts.index'))
   }
 
+  public async show ({ view, request }: HttpContextContract) {
+    const { id } = request.params()
+    const post = (await Post.findOrFail(id)).serialize()
+    return view.render('postEdit', { post })
+  }
+
+  public async update ({ response, request }) {
+    const { id } = request.params()
+    const newPost = request.body()
+    const post = await Post.findOrFail(id)
+    await post?.merge(newPost).save()
+
+    response.redirect(Route.builder().make('companies.index'))
+  }
+
   public async destroy ({ response, request }) {
+    console.log('### request.params()', request.params())
     const { id } = request.params()
     const post = await Post.findOrFail(id)
+    console.log('### post', post)
     await post?.delete()
 
     response.redirect(Route.builder().make('posts.index'))

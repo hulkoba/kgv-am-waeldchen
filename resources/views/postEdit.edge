@@ -2,19 +2,19 @@
 @set('activeRoute', 'aktuelles')
 @section('content')
 <div class="flex min-h-full flex-col justify-center px-12">
-  <h1 class="text-3xl mb-6 font-bold tracking-tight text-gray-900 sm:text-4xl">Artikel schreiben</h1>
-
+  <h1 class="text-3xl mb-6 font-bold tracking-tight text-gray-900 sm:text-4xl">Artikel bearbeiten</h1>
   <form
     class="pb-12 mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-6"
-    action="{{route('posts.store')}}"
+    action="{{route('posts.update', { id: post.id })}}?_method=PUT"
     method="POST"
     enctype="multipart/form-data">
     {{--  {{ csrfField() }}  --}}
+
     <div class="sm:col-span-2">
       <label
         for="file-upload"
         class="cursor-pointer text-sm leading-6 bg-white font-semibold text-teal-700 hover:text-teal-700 border-slate-500">
-        Lade ein Bild hoch
+        Lade ein anderes Bild hoch
         <input
         id="file-upload"
         name="post-image"
@@ -22,8 +22,9 @@
         type="file" accept="image/png, image/jpg, image/jpeg, image/gif" class="sr-only">
       </label>
       <div class="mt-2 rounded border border-dashed border-gray-900/25 aspect-[16/9] sm:aspect-[2/1] md:aspect-square md:w-64">
-        <div class="hidden image-preview">
-      </div>
+        <div class="image-preview">
+          <img src="{{post.image.url}}" class="loaded-image rounded object-cover aspect-[16/9] sm:aspect-[2/1] md:aspect-square md:w-64">
+        </div>
       </div>
     </div>
 
@@ -31,11 +32,16 @@
       @!input({
         'label': 'Titel',
         'name': 'title',
-        'type': 'text'
+        'type': 'text',
+        'value': post.title
       })
+
       <label for="text" class="block mt-4 text-sm font-medium leading-6 text-gray-900">Text</label>
       <div class="mt-2">
-        <textarea name="text" rows="3" class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-1 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"></textarea>
+        <textarea
+          name="text" rows="3"
+          class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-1 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6">{{post.text}}
+        </textarea>
       </div>
     </div>
 
@@ -46,24 +52,32 @@
       <button
         class="rounded bg-teal-800 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-700 min-w-max"
         type="submit">
-        Artikel posten
+        Artikel bearbeiten
       </button>
     </div>
   </form>
+
+  <div class="mt-8 sm:flex sm:items-start sm:justify-between">
+    <div>
+      <h3 class="text-base font-semibold leading-6 text-red-900">Artikel löschen</h3>
+      <div class="mt-2 max-w-xl text-sm text-gray-600">
+        <p>Möchtest du den Artikel <em>{{post.title}}</em> löschen?</p>
+      </div>
+    </div>
+    <a
+      class="rounded bg-red-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700"
+      href="{{route('posts.destroy', { id: post.id })}}">Ja, löschen</a>
+  </div>
+
 </div>
 
 <script>
-const image_preview = document.querySelector('.image-preview')
 function showSelectedFilename(event) {
   if (event.target.files[0]) {
-    const image = document.createElement('img')
+    const image = document.querySelector('.loaded-image')
     // use the DOMstring for source
     image.src = window.URL.createObjectURL(event.target.files[0]);
-    image.className = 'rounded object-cover aspect-[16/9] sm:aspect-[2/1] md:aspect-square md:w-64'
-    image_preview.appendChild(image);
-    image_preview.classList.toggle('hidden')
   }
 }
-
 </script>
 @endsection
