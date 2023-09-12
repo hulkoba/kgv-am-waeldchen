@@ -1,0 +1,24 @@
+<article class="group relative isolate flex flex-col gap-8 md:flex-row">
+  <div class="relative aspect-[16/9] sm:aspect-[2/1] md:aspect-square md:w-64 md:shrink-0">
+    <img
+      src="{{imageUrl}}"
+      class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover">
+    <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+  </div>
+
+  <div>
+    <div class="flex items-center gap-x-4 text-xs">
+      <time class="text-gray-500">{{date}}</time>
+    </div>
+    <div class="relative max-w-xl">
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-700">
+        {{ title }}
+      </h3>
+
+      {{{ await $slots.text() }}}
+    </div>
+  </div>
+  @if($slots.edit)
+  {{{ await $slots.edit() }}}
+  @endif
+</article>
