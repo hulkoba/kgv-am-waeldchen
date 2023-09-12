@@ -4,90 +4,245 @@
 <h1 class="text-3xl mb-6 font-bold tracking-tight text-gray-900 sm:text-4xl">Fragen und Antworten</h1>
 <div class="divide-y divide-gray-900/10">
   <h2 class="pt-6 text-xl font-semibold leading-8 text-gray-900">Grundstücksgestaltung</h2>
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7 hover:text-teal-900">Wie berechne ich meine Nutzfläche?</span></summary>
-
-    <p class="mt-2 pr-12 leading-7 text-gray-600">
-      Auf mindestens einem Drittel der Kleingartenfläche laut Pachtvertrag sind für in der Kleingärten typischen Vielfalt Obst- und Gemüsekulturen anzubauen.
+  @component('components/FAQ', {
+    question: 'Wie berechne ich meine Nutzfläche?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-600">
+      Auf mindestens einem Drittel der Kleingartenfläche laut Gartenordnung sind für in der Kleingärten typischen Vielfalt Obst- und Gemüsekulturen anzubauen.
     </p>
-    <a class="text-teal-600 font-medium hover:text-teal-500" href="/anbau">
-      Du kannst deine Nutzfläche ganz einfach berechnen.
-    </a>
-  </details>
+    <a class="text-teal-600 font-medium hover:text-teal-500" href="/anbau">Du kannst deine Nutzfläche ganz einfach berechnen.</a>
+    @end
+  @end
 
-  <details class="py-4">
-    <summary><span class="font-semibold leading- text-gray-600">Ich habe Hochbeete. Wie werden die Wege für die Nutzfläche berechnet?</span></summary>
-    <p class="mt-2 pr-12 leading-7 text-gray-600">
+  @component('components/FAQ', {
+    question: 'Was darf ich nicht pflanzen?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">Folgende Pflanzen sind laut unserer Gartenordnung (s. Anlage 2) nicht erlaubt</p>
+    <div class="mt-4 flex justify-between">
+        <div class="text-sm leading-6 text-gray-800"><span class="font-medium">Nadelbäume</span>
+          <ul class="mt-1 text-sm leading-6 text-gray-700">
+            <li>Tanne</li>
+            <li>Fichte</li>
+            <li>Kiefer</li>
+            <li>Lärche</li>
+            <li>Eibe</li>
+            <li>Scheinzypresse</li>
+            <li>Zeder</li>
+            <li>Lebensbaum/Thuja</li>
+            <li>Mammutbaum</li>
+            <li>Wacholder</li>
+          </ul>
+        </div>
+        <div class="text-sm leading-6 text-gray-800"><span class="font-medium">Laubbäume</span>
+          <ul class="text-gray-600 mt-1 text-sm leading-6">
+            <li>Eiche</li>
+            <li>Birke</li>
+            <li>Ahorn</li>
+            <li>Esche</li>
+            <li>Erle</li>
+            <li>Buche</li>
+            <li>Walnuss</li>
+            <li>Weide/Korkenzieherweide</li>
+            <li>Kastanie</li>
+            <li>Eberesche</li>
+            <li>Ginko</li>
+            <li>Pappel</li>
+        </ul>
+      </div>
 
+      <div class="text-sm leading-6 text-gray-800"><span class="font-medium">Sträucher</span>
+        <ul class="text-gray-600 mt-1 text-sm leading-6">
+          <li>Goldregen</li>
+          <li>Essigbaum</li>
+        </ul>
+      </div>
+
+      <div class="text-sm leading-6 text-gray-800"><span class="font-medium">sonstige Pflanzen</span>
+        <ul class="text-gray-600 mt-1 text-sm leading-6">
+          <li>Cannabis</li>
+        </ul>
+      </div>
+
+      <div class="text-sm leading-6 text-gray-800"><span class="font-medium">Wirtspflanzen für Krankheitserreiger</span>
+        <ul class="text-gray-600 mt-1 text-sm leading-6">
+          <li>Felsenmispel</li>
+            <li>Weißdorn</li>
+            <li>Rotdorn</li>
+            <li>Feuerdorn</li>
+            <li>Schlehe</li>
+            <li>Haferschlehe</li>
+            <li>5 – nadlige Kiefern</li>
+            <li>Weymouthskiefern</li>
+            <li>Sadebaum</li>
+            <li>Mandelbäumchen</li>
+            <li>Scheinquitte</li>
+            <li>Bocksdorn</li>
+        </ul>
+    </div>
+    </div>
+    <p class="mt-4 leading-7 text-gray-600">Das Anpflanzen und Verbreiten von invasiven Neophyten sind lt. § 40a BNatSchG gesetzlich verboten.</p>
+    @end
+  @end
+
+  @component('components/FAQ', {
+    question: 'Ich möchte mein Pachtgrundstück baulich verändern. Worauf muss ich achten?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">Für Baumaßnahmen, vom Neubau bis zur Erweiterung eines Bauwerkes, gibt es in unserer Gartenordnung (Abschnitt 3 - "Bebauung") klare Richtlinien.
+    <p class="mt-2 leading-7 text-gray-700">Bauliche Veränderungen auf dem Pachtgrundstück müssen vom Vorstand genehmigt werden. Hierzu ist ein schriftlicher und maßstäblich graphischer Bauantrag in 2-facher Ausführung beim Vorstand zu stellen.</p>
+    <p class="mt-2 leading-7 text-gray-700">
+      Die Errichtung von Baukörpern (Gartenlauben) erfolgt auf der Grundlage maßgebender Bestimmungen des Bundeskleingartengesetzes und der Bauordnung vom Land Brandenburg. Danach gilt der Grundsatz, dass nur ein Baukörper zulässig ist. Sie dürfen einschließlich Abort, Geräteraum und überdachtem Freisitz eine bebaute Grundfläche von 24 m² nicht übersteigen (BKleingG §3).</p>
+
+      <p class="mt-2 leading-7 text-gray-700">Unsere Gartenordnung verbietet den Neubau von</p>
+      <ul class="mt-2 text-sm leading-6 text-gray-700 ml-3">
+        <li class="py-1">Schuppen und Garagen</li>
+        <li class="py-1">Gemauerte Kompostbehälter</li>
+        <li class="py-1">Ortsfeste Schwimm- und Planschbecken</li>
+        <li class="py-1">Auf- und Anbauten</li>
+        <li class="py-1">Erweiterungen von Terrassen und Überdachungen</li>
+        <li class="py-1">Solaranlagen mit Einspeisung in das Hauptstromnetz</li>
+      </ul>
+    @end
+  @end
+
+  @component('components/FAQ', {
+    question: 'Ich möchte einen Komposter aufstellen. Worauf muss ich achten?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">Kompostlagerplätze sind vor Einsicht geschützt anzulegen und dürfen nicht zur Belästigung der NachbarInnen führen.</p>
+    <p class="mt-2 leading-7 text-gray-700">Des Weiteren ist es hilfreich, folgende Tipps zu beachten</p>
+
+    <div class="mt-2 leading-6 text-gray-800"><span class="font-medium">Der richtige Platz</span>
+      <ul role="list" class="text-sm leading-6 text-gray-700 ml-3">
+        <li class="py-1">Halbschatten</li>
+        <li class="py-1">Offener Boden- kein Betonboden! So können nützliche Lebewesen einwandern</li>
+        <li class="py-1">Ein Hasendraht am Boden hält Nager fern</li>
+        <li class="py-1">Den Abstand gut wählen: nicht zu nah am Nachbargrundstück, am Haus (nicht im Windschatten) und nicht zu weit entfernt von den Nutzflächen</li>
+        <li class="py-1">Der Weg zum Kompost sollte befestigt sein, der Regen weicht ihn sonst auf</li>
+        <li class="py-1">Der Kompost sollte mit Hecken oder Bäumen (Sicht- und Windschutz) umpflanzt sein</li>
+        <li class="py-1">An den Kompost muss Luft kommen, er darf nicht von geschlossenen Wänden umgeben sein</li>
+      </ul>
+    </div>
+
+    <div class="mt-2 leading-6 text-gray-800"><span class="font-medium">Der richtige Behälter</span>
+      <ul role="list" class="mt-1 text-sm leading-6 text-gray-700 ml-3">
+        <li class="py-1">Für den Gartenkompost eignet sich ein offenes Behältnis, das den Luft- und Wasseraustausch ermöglicht</li>
+        <li class="py-1">Miete: Hier ist viel Platz vorhanden, er ist leicht umzuschichten und sollte mit Stroh oder Rasenschnitt abgedeckt werden, wenn der Kompost fertig ist</li>
+        <li class="py-1">Lattenkomposter: ist wegen der variablen Höhe an die Menge anpassbar und sollte aus naturbelassenem Holz bestehen; wichtig ist, dass der natürliche Luftaustausch gewährleistet ist und die Bretter herausnehmbar sind; zwei Behälter nebeneinander sind ideal
+        <li class="py-1">Drahtgitter-Kompost: funktioniert wie ein Lattenkompost, ist aber haltbarer</li>
+      </ul>
+    </div>
+
+    <div class="mt-2 leading-6 text-gray-800"><span class="font-medium">Weitere Tipps</span>
+      <ul role="list" class="mt-1 text-sm leading-6 text-gray-700 ml-3">
+        <li class="py-1">Das eingebrachte Material sollte feucht, aber nicht nass sein und großflächig aufgebracht werden</li>
+        <li class="py-1">Gut ist, wenn möglichst viel unterschiedliches Material eingebracht und gut durchgemischt wird. Wichtig ist dabei das Kohlenstoff/Stickstoff Verhältnis (C/N), also das Verhältnis von holzigem und frischem Material</li>
+        <li class="py-1">Grobes Material sollte 20 Zentimeter auf dem Boden aufgeschichtet werden, dann darauf das feinere Material (Laub, Rasenschnitt, etc.) gemischt aufbringen</li>
+        <li class="py-1">Zum Schluss abdecken - das fördert die Wärmeentwicklung und verhindert den Feuchtigkeitsverlust</li>
+      </ul>
+    </div>
+    @end
+  @end
+
+  @component('components/FAQ', {
+    question: 'Ich möchte eine Bewässerungsanlage installieren. Was muss ich beachten?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">
+      Das Thema "Wasserversorgung" ist in unserer Gartenordnung in Punkt 5.2. geregelt.</br>
+      Es steht geschrieben, dass eine Wasserentnahme zur Beregnung an heißen Tagen nur zwischen 10 und 18 Uhr erfolgen darf.
+      Außerdem sind Zeitschaltuhren so einzustellen, dass die Beregnung zwischen Sonnenuntergang und Sonnenaufgang erfolg.
     </p>
-  </details>
+    <p class="mt-2 leading-7 text-gray-700">Eine Verwendung von Feuchtigkeitssensoren ist sehr sinnvoll, sodass die Sprenger nicht bei Regenwetter aktiv sind.</p>
+    <p class="mt-2 leading-7 text-gray-700">Allgemeine <a class="text-teal-600 font-medium hover:text-teal-500" target="_blank" href="https://www.nabu.de/umwelt-und-ressourcen/oekologisch-leben/balkon-und-garten/pflege/giftfrei/pflegen/24735.html">Tipps für die Bewässerung im Garten</a> liefert z.B. der Nabu</p>
 
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Was darf ich nicht pflanzen?</span></summary>
-  </details>
-
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Ich möchte mein Pachtgrundstück baulich verändern. Worauf muss ich achten?</span></summary>
-  </details>
-
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Was darf ich nicht bauen?</span></summary>
-  </details>
-
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Ich möchte einen Komposter aufstellen. Worauf muss ich achten?</span></summary>
-  </details>
-
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Werden Regentonnen und Komposter zur Nutzfläche gerechnet?</span></summary>
-  </details>
-
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Ich möchte eine Bewässerungsanlage installieren. Was muss ich beachten?</span></summary>
-  </details>
+    <p class="mt-2 leading-7 text-gray-700">Generell gilt, je direkter die gewünschten Pflanzen bewässert werden desto geringer der Wasserverbrauch. So spart bodennahe Tröpfchenbewässerung zB bis zu 70% Wasser im Verhältnis zu Regnerbewässerung. Eine gute Podcastfolge des MDR über <a class="text-teal-600 font-medium hover:text-teal-500" href="https://www.mdr.de/mdr-garten/podcast/audio-automatische-bewaesserung-giessen-tipps-100.html" target="_blank">Automatischen Bewässerung für Garten und Balkon</a> geht auf die Vor- und Nachteile der Tröpchenbewässerung ein. Viel Spaß beim Hören :)</p>
+    @end
+  @end
 
   <h2 class="pt-10 text-xl font-semibold leading-8 text-gray-900">Organisatorisches</h2>
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Wie und wo kann ich Abfall entsorgen?</span></summary>
-  </details>
 
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Und wie ist das mit dem Sperrmüll?</span></summary>
-  </details>
+  @component('components/FAQ', {
+    question: 'Wie und wo kann ich Abfall entsorgen?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">
+     Für die gelben Säcke gibt es am Haupttor eine Hakenleiste zur Anbringung. Der Abfallkalender befindet sich im Aushang und auch <a class="text-teal-600 font-medium hover:text-teal-500" target="_blank" href="/aktuelles">bei "Aktuelles"</a>.
+    </p>
+    <p class="leading-7 text-gray-700">Die Säcke für den Hausmüll können gekauft (2,50€), und ebenfalls dort abgeladen werden.</p>
+    <p class="leading-7 text-gray-700">Bitte bringt euren Müll so kurzfristig wie möglich um Sammelplatz. Wir möchten Gestand vermeiden und den Waschbären nicht die Möglichkeit zu bieten, den Müll zu verteilen</p>
+    @end
+  @end
+  @component('components/FAQ', {
+    question: 'Und wie ist das mit dem Sperrmüll?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">Du kannst, wie bei dir zu Hause, die Abholung von Sperrmüll beantragen. Genaueres findest du bei <a class="text-teal-600 font-medium hover:text-teal-500" target="_blank" href="/dokumente#sperrmuellantrag">den Dokumenten</a>.
+    </p>
+    @end
+  @end
 
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Wann wird das Wasser ab- und angestellt?</span></summary>
-  </details>
+  @component('components/FAQ', {
+    question: 'Wann wird das Wasser ab- und angestellt?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">
+      In der Regel ist die Wasserentnahme in den Monaten April bis Oktober möglich.
+      Es können durch Witterungsbedingungen, wie früher Frost, Änderungen der Zeiten erfolgen. Das genaue Datum wird im Aushang bekannt gegeben.
+    </p>
+    @end
+  @end
 
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-900">Darf ich Schnittreste verbrennen?</span></summary>
-    <p>Unter Punkt 3 der Gartenordnung steht hierzu folgendes:</p>
-    <p>„(9) Das Verbrennen oder Verräuchern von Gartenabfällen ist ausnahmslos verboten. Siehe dazu das Landesimmissionsschutzgesetz (LImschG)
-    Das Verbrennen von unbehandeltem, trockenem Holz in Feuerschalen o. ä. ist gestattet.
+  @component('components/FAQ', {
+    question: 'Darf ich Schnittreste verbrennen?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">Unter Punkt 4 der Gartenordnung steht hierzu folgendes:</p>
+    <p class="mt-2 leading-7 text-gray-700">"Das Verbrennen von pflanzlichen Abfällen und Haushaltsabfällen ist laut Landesimmissionsschutzgesetz §7 verboten. Desgleichen dürfen keine anderen Gegenstände, die zu gesundheitsschädigender und störender Rauchentwicklung führen, verbrannt werden." Mit Holzschutzmitteln, Öl bzw. Farbe behandeltes Holz, Plastik, Teer- oder Dachpappe und Faserplatten dürfen nicht verbrannt werden.</p>
+    <p class="mt-2 leading-7 text-gray-700">Das Verbrennen von unbehandeltem, trockenem Holz in Feuerschalen o. ä. ist gestattet.
     Dabei sind alle Sicherheitsfaktoren wie Windstärke, Windrichtung und Standort zu berücksichtigen.</p>
-    <p>Es ist Rücksicht auf andere Vereinsmitglieder zu nehmen.
-    (Mit Holzschutzmitteln, Öl bzw. Farbe behandeltes Holz, Plastik, Teer- oder Dachpappe und Faserplatten dürfen nicht verbrannt werden).“</p>
-  </details>
+    <p class="mt-2 leading-7 text-gray-700">Bitte nehmt Rücksicht auf andere Vereinsmitglieder und stellt geeignete Löschmittel bereit.</p>
+    @end
+  @end
+
 
   <h2 class="pt-10 text-xl font-semibold leading-8 text-gray-900">Miteinander</h2>
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-900">Welche Ruhezeiten muss ich einhalten?</span></summary>
-    <p>An Werktagen (Mo. – Sa.) in der Zeit von 13.00 bis 15.00 Uhr und von 22.00 bis 06.00 Uhr, sowie an Sonn- und Feiertagen grundsätzlich ganztägig.</p>
 
-    <p>Es ist untersagt, während der Ruhezeiten motorgetriebene Gartengeräte zu nutzen oder lärmverursachendes Bauen auszuführen.</p>
-    -- Gartenordnung 6.4
-  </details>
+  @component('components/FAQ', {
+    question: 'Welche Ruhezeiten muss ich einhalten?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">Es gelten folgende Ruhezeiten:</br>
+      täglich <strong>zwischen 13.00 bis 15.00 Uhr und von 22.00 bis 08.00 Uhr</strong>. An Sonn- und Feiertagen grundsätzlich <strong>ganztägig</strong>.</p>
 
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Müssen sich Baufirmen auch an die Ruhezeiten halten?</span></summary>
-  </details>
+    <p class="mt-2 leading-7 text-gray-700">Es ist untersagt, während der Ruhezeiten motorgetriebene Gartengeräte zu nutzen oder lärmverursachendes Bauen auszuführen.</p>
+    <p class="mt-2 leading-7 text-gray-700">Die Lautstärke von Rundfunk-, Fernseh- und Phonogeräten u. ä. ist so abzustimmen, dass niemand belästigt wird. Gleiches gilt für das Spielen von Musikinstrumenten jeder Art.</p>
+    @end
+  @end
 
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Darf ich auf meinem Pachtgrundstück grillen oder ein Lagerfeuer machen?</span></summary>
-  </details>
+  {{--  @component('components/FAQ', {
+    question: 'Müssen sich Baufirmen auch an die Ruhezeiten halten?'
+  })
+    @slot('answer')
+    @end
+  @end  --}}
 
-  <details class="py-4">
-    <summary><span class="font-semibold leading-7  hover:text-teal-900 text-gray-600">Ich möchte eine Party feiern. Muss ich wirklich alle Vereinsmitglieder einladen?</span></summary>
-  </details>
+  @component('components/FAQ', {
+    question: 'Darf ich auf meinem Pachtgrundstück grillen oder ein Lagerfeuer machen?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">Das Verbrennen von naturbelassenem trockenem Holz unter Verwendung von Feuerschalen, -körben und ortsfesten Kaminen, in Heizungsanlagen sowie auf einer Grundfläche von 1x1 m möglich. Ihr solltet natürlich aufpassen, Löschmittel bereitstellen und niemanden durch Geruch oder Rauch belästigen.</p>
+    @end
+  @end
+
+  @component('components/FAQ', {
+    question: 'Ich möchte eine Party feiern. Muss ich wirklich alle Vereinsmitglieder einladen?'
+  })
+    @slot('answer')
+    <p class="mt-2 leading-7 text-gray-700">Nein. Aber du musst den Vorstand und deine angrenzenden NachbarInnen informieren.</p>
+    @end
+  @end
 </div>
 @endsection

@@ -50,10 +50,8 @@ export default class PostsController {
   }
 
   public async destroy ({ response, request }) {
-    console.log('### request.params()', request.params())
     const { id } = request.params()
     const post = await Post.findOrFail(id)
-    console.log('### post', post)
     await post?.delete()
 
     response.redirect(Route.builder().make('posts.index'))
