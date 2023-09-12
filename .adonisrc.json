@@ -27,13 +27,16 @@
     "@adonisjs/auth",
     "@adonisjs/attachment-lite"
   ],
+  "directories": {
+    "views": "./app/views"
+  },
   "metaFiles": [
     {
       "pattern": "public/**",
       "reloadServer": false
     },
     {
-      "pattern": "resources/views/**/*.edge",
+      "pattern": "app/views/**/*.edge",
       "reloadServer": false
     }
   ],
