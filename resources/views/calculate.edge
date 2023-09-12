@@ -14,8 +14,8 @@
   @endif
   <form class="calculate-garden-form pb-12" action="/anbau" method="POST">
   {{--  {{ csrfField() }}  --}}
-  <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-4">
-    <div class="sm:col-span-3">
+  <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-4">
+    <div class="sm:col-start-2 sm:col-span-2">
       @!input({
         'label': 'Größe des Grundstücks in m²',
         'name': 'size',
@@ -25,7 +25,7 @@
       })
     </div>
 
-    <div class="sm:col-span-2">
+    <div class="sm:col-start-2 sm:col-span-1">
       @!input({
         'label': 'Beetfläche in m²',
         'name': 'vegetables',
@@ -34,7 +34,7 @@
         'value': calculation.vegetables
       })
     </div>
-    <div class="sm:col-span-2">
+    <div class="sm:col-span-1">
       @!input({
         'label': 'Gewächshaus Grundfläche in m²',
         'name': 'greenhouse',
@@ -43,7 +43,7 @@
         'value': calculation.greenhouse
       })
     </div>
-    <div class="sm:col-span-2">
+    <div class="sm:col-start-2 sm:col-span-1">
       @!input({
         'label': 'Hoch- oder Halbstamm',
         'name': 'halbstamm',
@@ -53,7 +53,7 @@
         'value': calculation.halbstamm
       })
     </div>
-    <div class="sm:col-span-2">
+    <div class="sm:col-span-1">
       @!input({
         'label': 'Niederstamm',
         'name': 'niederstamm',
@@ -64,7 +64,7 @@
       })
       <p class="help"></p>
     </div>
-    <div class="sm:col-span-2">
+    <div class="sm:col-start-2 sm:col-span-1">
       @!input({
         'label': 'Buschbaum',
         'name': 'buschbaum',
@@ -74,7 +74,7 @@
         'value': calculation.buschbaum
       })
     </div>
-    <div class="sm:col-span-2">
+    <div class="sm:col-span-1">
       @!input({
         'label': 'Spindel',
         'name': 'spindel',
@@ -84,7 +84,7 @@
         'value': calculation.spindel
       })
     </div>
-    <div class="sm:col-span-2">
+    <div class="sm:col-start-2 sm:col-span-1">
       @!input({
         'label': 'Beerensträucher',
         'name': 'beeren',
@@ -94,7 +94,7 @@
         'value': calculation.beeren
       })
     </div>
-    <div class="sm:col-span-2">
+    <div class="sm:col-span-1">
       @!input({
         'label': 'Beetlänge von Ranken oder Spalierobst',
         'name': 'spalierobst',
@@ -104,35 +104,8 @@
         'value': calculation.spalierobst
       })
     </div>
-    <div class="sm:col-span-2">
-      @!input({
-        'label': 'Komposter',
-        'name': 'composter',
-        'type': 'number',
-        'placeholder': '1',
-        'value': calculation.composter
-      })
-    </div>
-    <div class="sm:col-span-2">
-      @!input({
-        'label': 'Regentonne oder Wassertank',
-        'name': 'watertank',
-        'type': 'number',
-        'placeholder': '2',
-        'value': calculation.watertank
-      })
-    </div>
-    <div class="sm:col-span-3">
-      @!input({
-        'label': 'Beetlänge von Blumenanlagen',
-        'name': 'flowers',
-        'type': 'number',
-        'placeholder': '2',
-        'value': calculation.flowers
-      })
-    </div>
 
-    <div class="col-span-full mt-6 flex justify-end gap-x-6">
+    <div class="col-end-4 col-span-2 mt-6 flex justify-end gap-x-6">
       <a class="rounded text-sm font-semibold px-3 py-2 leading-6 text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 bg-white" href="/">Abbrechen</a>
       <button
         class="rounded bg-teal-800 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-700 min-w-max"

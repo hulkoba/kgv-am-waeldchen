@@ -8,7 +8,6 @@ export default class HelpersController {
     const size = parseInt(body.size)
     const bed = parseFloat(body.vegetables)
     const greenhouse = body.greenhouse && parseFloat(body.greenhouse)
-    const flowers = body.flowers && parseFloat(body.flowers) * 0.5
 
     const halbstamm = body.halbstamm && parseInt(body.halbstamm) * 10
     const niederstamm = body.niederstamm && parseInt(body.niederstamm) * 5
@@ -17,12 +16,9 @@ export default class HelpersController {
     const beeren = body.beeren && parseFloat(body.beeren)
     const spalierobst = body.spalierobst && parseFloat(body.spalierobst) * 0.5
 
-    const composter = body.composter && parseFloat(body.composter)
-    const watertank = body.watertank && parseFloat(body.watertank)
-
-    const sum = bed + greenhouse + flowers +
+    const sum = bed + greenhouse +
      halbstamm + niederstamm + buschbaum + spindel +
-     beeren + spalierobst + composter + watertank
+     beeren + spalierobst
     const result = (100 * sum) / size
 
     const calculation = {
